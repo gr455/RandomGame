@@ -1,7 +1,7 @@
 import random
 import math
-count=0
-tests=1
+count=0       # for score
+tests=1       # for number of attempts, it is equal to 1 as if it is 0 and 'n' is inputted in line 18, still user has played once.
 def game():
   global count
   global tests
@@ -14,15 +14,15 @@ def game():
     print('\ncurrent score= ' + str(count))
   else:
     print('\nyou missed by ' + str(a-b) + '.')
-    print('\ncurrent score= ' + str(count))
-  c=str(input("Do You want to play again?(Y/N) "))
+    print('\ncurrent score= ' + str(count))         #displays current score
+  c=str(input("Do You want to play again?(Y/N) "))   # if user inputs 'y' or 'Y', game() is called again
   if c=='Y' or c=='y':
     global tests
     game()
     tests+=1
   else:
     print('Game Over!')
-    d=count/tests
+    d=count/tests       #doesn't seem to work.
     print("Your Score= " +str(d)+ ".")
 
 game()
