@@ -1,8 +1,10 @@
 import random
+score_of_player=0           #will come in handy when using file handling
 def game():               
   score=0                     #for score
   number_of_attempts=1      #for number of attempts
   isPlaying = True          #for the first run.
+  global score_of_player
 
   range_of_guess=int(input("Select a range(0-___) for guessing. "))
   print("Remember, the bigger number, the higher your potential score! ")
@@ -29,7 +31,18 @@ def game():
 
   print('Game Over!')
   final_score=score/number_of_attempts             
-  print("Your Score: ",final_score)            
+  print("Your Score: ",final_score)
+  score_of_player=final_score
 
 game()
+player_name=str(input("Enter your name: "))               #For Leaderboard
+file = open('leaderboard.txt','a')                        #Append mode as of now.
+file.write('\n'+ player_name +' ' +str(score_of_player))
+file.close()
+file2= open('leaderboard.txt','r')
+print('List of players and their scores')                 #We show the leaderboard
+print('--------------------------------')
+for i in file2:
+  print(i)
+file2.close()
 
