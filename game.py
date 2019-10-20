@@ -15,7 +15,7 @@ def game():
     
     if user_guess==computer_guess:
       print('Congrats! You got it right!')
-      print('The probability of this is ' + str(1/(range_of_guess+1)))    #adds probability for a sense of satisfacton of player
+      print('The probability of this is ' + str(1/(float)(range_of_guess+1)))    #adds probability for a sense of satisfacton of player
       score+=range_of_guess           # prevents free riders using 0 always
       print('Current score= ' + str(score))
     
